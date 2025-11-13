@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smartpredict-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smartpredict
+  template:
+    metadata:
+      labels:
+        app: smartpredict
+    spec:
+      containers:
+      - name: smartpredict
+        image: smartpredict:latest
+        ports:
+        - containerPort: 8000

@@ -1,0 +1,30 @@
+name: SmartPredict CI/CD
+on: [push]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run tests
+        run: echo "Tests placeholder" # Replace with pytest commands later
+
+      - name: Build Docker image
+        run: docker build -t smartpredict:latest .
+
+      - name: Security scan
+        run: echo "Trivy scan placeholder" # Add Trivy scan later
+
+      - name: Deploy to Kubernetes
+        run: echo "Deployment placeholder" # Add kubectl apply later

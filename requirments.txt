@@ -1,0 +1,11 @@
+pandas
+numpy
+scikit-learn
+xgboost
+mlflow
+fastapi
+uvicorn
+apache-airflow
+psycopg2-binary
+pyyaml
+joblib
